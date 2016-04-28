@@ -1,0 +1,68 @@
+  <!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Deals Today</title>
+			<meta charset="utf-8">
+			<style>
+				a
+				{
+					font-size : 18pt;
+					color : #FF4500;
+				}
+				body	
+				{
+					background: url("4.jpg") no-repeat;			
+					background-size: cover;
+					font-size : 20pt;
+					color : #FF4500;
+					font-family:Gabriola
+				}
+				.PImg
+				{
+					align: right;
+					height: 250px;
+					width: 200px;
+				}
+				div 
+				{
+					border-style: double;
+					border-width: 5px;
+					width : 500px;
+					padding : 25px;
+					border-radius: 25px;
+					border-color: #FF4500;
+					margin-left : 700px;
+				}
+			</style>
+			<script type="text/javascript">
+				<!-- HIDE FROM OTHER BROWSERS>	
+				document.write("<H1 align='center'><strong>Meals On Map</strong><img src='food_icon.png' height='50' width='50'><sub><i>Pick-Up Homemade meals from your neighborhood<img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'></i></sub></H1><table align = 'center' border='0.5'  cellspacing = '25'><tr>		<td><a href='Catalog.html'>Today's Menu</a></td><td><a href='Upcoming.html'>Upcoming Meals Available</a></td><td><a href='Deals.html'>Deals</a></td><td><a href='orderform.html'>Order Now</a></td>	<td><a href='SignUp.html'>Login/Sign-Up</a></td><td><a href='FAQs.html'>Frequently Asked Questions</a></td><td><a href='AboutUs.html'> About Us - How we work</a></td></tr></table><hr>");
+				document.write("<p align = 'left'><a href='MOM Homepage.html'>Home</a>>Deals Today</p>");
+				function product(image, desc) 
+				{
+				this.image = image;
+				this.desc = desc;
+				this.show = display;
+				}
+				function display() 
+				{
+				document.write("<br><img class ='PImg' src="+this.image + "><br>" +this.desc + "&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp" );
+				}
+				function func1()
+				{
+					document.write("<div>");
+					var flower1 = new product("CB.jpg","Order 1, take home 2!! <br> Ends tonight at 8:00 PM!<p align='center'>HURRYYYYY!!!!</p><p align='center'><a href='orderform.html'>Order Now</a></p>");
+					var flower2 = new product("noodles.jpg","Check out the new variety!! <br> Ends tonight at 6:30 PM! <p align='center'>HURRYYYYY!!!!</p><p align='center'><a href='orderform.html'>Order Now</a></p>");
+					var flower3 = new product("FR.jpg","Reduced Prices <br> Ends this afternoon at 4:00 PM! <p align='center'>HURRYYYYY!!!!</p><p align='center'><a href='orderform.html'>Order Now</a></p>");
+					flower1.show();flower2.show();flower3.show();
+					document.write("</div>");
+				}
+				func1();
+				
+				// STOP HIDING FROM OTHER BROWSERS -->
+			</script>
+		</head>
+	<body align = "center">
+
+   	</body>
+</html>

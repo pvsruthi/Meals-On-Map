@@ -1,0 +1,231 @@
+ <!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Meals On Map - MOM - Home</title>
+			<meta charset="utf-8">
+			<style>
+			a
+			{
+				font-size : 18pt;
+				color : #800080;
+			}
+			body	
+			{
+			background-size: cover;
+			font-size : 20pt;
+			color : #800080;
+			font-family:Gabriola
+			}
+		</style>
+					<script>
+						function onclickImg1()
+						{
+						PopUp = window.open("Catalog.html");
+						}
+						function onclickImg2()
+						{
+						PopUp = window.open("Upcoming.html");
+						}						
+						//fb code -- start - for Login button
+						(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1692948377624287";
+						fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+						<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>-->
+						//fb code -- end - for Login button
+						
+						//fb code -- start - for Like and Share buttons
+						window.fbAsyncInit = function() {
+						FB.init({
+						appId      : '1692948377624287',
+						xfbml      : true,
+						version    : 'v2.6'
+						});
+						};
+
+						(function(d, s, id){
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) {return;}
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/en_US/sdk.js";
+						fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+						//fb code -- end - for Like and Share buttons
+			
+			//fb login auth code - start
+						// This is called with the results from from FB.getLoginStatus().
+						function statusChangeCallback(response) {
+						console.log('statusChangeCallback');
+						console.log(response);
+						// The response object is returned with a status field that lets the
+						// app know the current login status of the person.
+						// Full docs on the response object can be found in the documentation
+						// for FB.getLoginStatus().
+						if (response.status === 'connected') {
+						// Logged into your app and Facebook.
+						testAPI();
+						} else if (response.status === 'not_authorized') {
+						// The person is logged into Facebook, but not your app.
+						document.getElementById('status').innerHTML = 'Please log ' +
+						'into this app.';
+						} else {
+						// The person is not logged into Facebook, so we're not sure if
+						// they are logged into this app or not.
+						document.getElementById('status').innerHTML = 'Please log ' +
+						'into Facebook.';
+						}
+						}
+
+						// This function is called when someone finishes with the Login
+						// Button.  See the onlogin handler attached to it in the sample
+						// code below.
+						function checkLoginState() {
+						FB.getLoginStatus(function(response) {
+						statusChangeCallback(response);
+						});
+						}
+
+						window.fbAsyncInit = function() {
+						FB.init({
+						appId      : '{your-app-id}',
+						cookie     : true,  // enable cookies to allow the server to access 
+						// the session
+						xfbml      : true,  // parse social plugins on this page
+						version    : 'v2.5' // use graph api version 2.5
+						});
+
+						// Now that we've initialized the JavaScript SDK, we call 
+						// FB.getLoginStatus().  This function gets the state of the
+						// person visiting this page and can return one of three states to
+						// the callback you provide.  They can be:
+						//
+						// 1. Logged into your app ('connected')
+						// 2. Logged into Facebook, but not your app ('not_authorized')
+						// 3. Not logged into Facebook and can't tell if they are logged into
+						//    your app or not.
+						//
+						// These three cases are handled in the callback function.
+
+						FB.getLoginStatus(function(response) {
+						statusChangeCallback(response);
+						});
+
+						};
+
+						// Load the SDK asynchronously
+						(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/en_US/sdk.js";
+						fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+
+						// Here we run a very simple test of the Graph API after login is
+						// successful.  See statusChangeCallback() for when this call is made.
+						function testAPI() {
+						console.log('Welcome!  Fetching your information.... ');
+						FB.api('/me', function(response) {
+						console.log('Successful login for: ' + response.name);
+						document.getElementById('status').innerHTML =
+						'Thanks for logging in, ' + response.name + '!';
+						});
+						}
+			//fb login auth code - end
+			
+</script>
+		</head>
+	
+	<body onload= "displayAds();displayAds1();">				
+	<H1 align="center"><strong>Meals On Map</strong><img src='food_icon.png' height='50' width='50'><sub>Pick-Up Homemade meals from your neighborhood<img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'></sub></H1>
+		<table align = "center" border='0.5'cellspacing = "25">
+		<tr>
+		<td><a href="Catalog.html">Today's Menu</a></td>
+		<td><a href="Upcoming.html">Upcoming Meals Available</a></td>
+		<td><a href="Deals.html">Deals</a></td>
+		<td><a href="orderform.html">Order Now</a></td>
+		<td><a href="SignUp.html">Login/Sign-Up</a></td>
+		<td><a href="FAQs.html">Frequently Asked Questions</a></td>
+		<td><a href="AboutUs.html"> About Us - How we work</a></td>
+		</tr>
+		</table>
+		<hr>
+			<p align = "left"><b> Meals On Map - Your very own, almost MOM-made food available for you</b></p>
+
+			<p> Healthy and nutritious food is a basic need for every one of us. What could be better than a fresh, tasty and healthy homemade meal? We are introducing our unique application “Meals On the Map (MOM)” which will satisfy this very need of our people. 
+			The idea behind our application is to make fresh homemade food available to people in a neighborhood which is cooked by the chefs in the same neighborhood. Here we are not only satisfying food needs of people but also creating business opportunity for home based cooks. </p>
+			<!-- fb code buttons - Start-->
+				<div class='fb-like'
+				data-share='true'
+				data-width='450'
+				data-show-faces='true'>
+				</div></p>
+				<!-- fb code buttons - end-->
+			<table align = "center" cellspacing = "70">
+			<tr>		
+				<td> Today's Special 
+				<form id="ads" action = "" target="_blank"> 
+				<script>
+								var a1 = new Object();
+								var a2 = new Object();
+								var a3 = new Object();
+								a1.banner = "CB.jpg";
+								 //a1.url = window.open("Catalog.html");
+								 a1.id = "1";
+								 a2.banner = "noodles.jpg";
+								 //a2.url = window.open("Catalog.html");
+								 a2.id = "2";								 
+								 a3.banner = "FR.jpg";
+								 //a3.url = window.open("Catalog.html");
+								 a3.id = "3";								 
+								 var arrayAds = new Array(3);
+								 arrayAds = [a1,a2,a3];
+								function displayAds()
+								{
+									var x =(Math.floor(Math.random() * 3) + 0);
+									var btn = document.getElementById('ads');
+									//btn.action=arrayAds[x].url;
+									//btn.onclick=onclickImg1();
+									btn.innerHTML="<input type='hidden' value='"+arrayAds[x].id+"'/><input type='image' class ='catalogImg' alt='Ads' style='width:500px; height:250px' src='"+arrayAds[x].banner+"' onclick = 'onclickImg1();'/>";
+									setTimeout( function () { displayAds() ;}, 2500);
+								}	
+				</SCRIPT>
+				</form>
+				</td>
+				<td>Upcoming Meals
+				<form id="ads1" action = "" target="_blank" > 
+				<script>
+								var a11 = new Object();
+								var a21 = new Object();
+								var a31 = new Object();
+								 a11.banner = "pasta.jpg";
+								 //a1.url = window.open("Upcoming.html");
+								 a11.id = "1";
+								 a21.banner = "potato_croquette.jpeg";
+								 //a2.url = window.open("Upcoming.html");
+								 a21.id = "2";								 
+								 a31.banner = "vegetables_with_olivada.jpeg";
+								 //a3.url = window.open("Upcoming.html");
+								 a31.id = "3";								 
+								 var arrayAds1 = new Array(3);
+								 arrayAds1 = [a11,a21,a31];
+								function displayAds1()
+								{
+									var x1 =(Math.floor(Math.random() * 3) + 0);
+									var btn1 = document.getElementById('ads1');
+									//btn.action=arrayAds[x].url;
+									//btn.onclick=onclickImg2();
+									btn1.innerHTML="<input type='hidden' value='"+arrayAds1[x1].id+"'/><input type='image' class ='catalogImg' alt='Ads1' style='width:500px; height:250px' src='"+arrayAds1[x1].banner+"' onclick= 'onclickImg2();'/>";
+									setTimeout( function () { displayAds1() ;}, 2500);
+								}	
+				</SCRIPT>
+				</form>
+				</td>
+				
+			</tr>
+		</table>	
+	</body>
+</html>

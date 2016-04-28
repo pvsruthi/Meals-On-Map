@@ -1,0 +1,58 @@
+ <html>
+<head><title>MOM - Provider Homepage</title>
+<style>
+
+		body{
+			background-size: cover;
+			font-size : 18pt;
+			color : #800080;
+			font-family:Gabriola}
+
+</style>
+</head>
+<body>
+<H1 align="center"><strong>Meals On Map</strong><img src='food_icon.png' height='50' width='50'><sub>Pick-Up Homemade meals from your neighborhood<img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'></sub></H1>
+		<table align = "center" border='0.5'  cellspacing = '25'>
+		<tr>
+		<td><a href="Catalog.html">Today's Menu</a></td>
+		<td><a href="Upcoming.html">Upcoming Meals Available</a></td>
+		<td><a href="Deals.html">Deals</a></td>
+		<td><a href="orderform.html">Order Now</a></td>
+		<td><a href="SignUp.html">Login/Sign-Up</a></td>
+		<td><a href="FAQs.html">Frequently Asked Questions</a></td>
+		<td><a href="AboutUs.html"> About Us - How we work</a></td>
+		</tr>
+		</table>
+		<hr>
+<p align="center"> Upload/Modify your menu </p>
+<form  name="myForm"  method="POST" onsubmit=" return validate_fields()">		
+				<table align="center" style="font-size:15pt" border=2 bgcolor="#F5DEB3" width="50%" height="300px">
+				<tr height="60px"><th align="right">Dish</th><td><input type="number" name="ccnum" id="Credit card number" size="55" maxlength="16"></td></tr>
+				<tr height="60px"><th align="right">Price</th><td><input type="number" name="ccnum" id="Credit card number" size="55" maxlength="16"></td></tr>
+				<tr height="60px"><th align="right">Quantity Available</th><td><input type="number" name="ccnum" id="Credit card number" size="55" maxlength="16"></td></tr>				
+				<tr><th align="right">Sold-Out</td>
+					   <td>
+							<select name="cctype" id="credit card type">
+								<option selected > Select one</option>
+								<option>Yes</option>
+								<option>No</option>
+							</select>
+						</td>
+				<tr height="60px"><th align="center" colspan = "2"><a href = "Deals.html"> Today's Deals</a></th>
+				</tr></table>	
+</form>
+<p style="text-align:center">
+	<input type="button" name="upload" id="upload button" value="Upload">&nbsp &nbsp 
+	<input type="reset" name="reset" id="reset button" value="Reset" >
+</p>
+		<table align = "center" border='0.5'  cellspacing = '25'>
+		<tr>
+		<td><a href="SignUp.html">Edit Profile</a></td>
+		<td><a href="SignUp.html">Sign-Up</a></td>
+		<td><a href="SignUp.html">Provide Feedback</a></td>
+		<td><a href="SignUp.html">Change to Customer login</a></td>
+		</tr>
+		</table>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+  <!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Meals On Map - MOM - Home</title>
+			<meta charset="utf-8">
+			<style>
+			a
+			{
+				font-size : 16pt;
+				color : #800080;
+			}
+			body	
+			{
+			background-size: cover;
+			font-size : 18pt;
+			color : #800080;
+			font-family:Gabriola
+			}
+
+			</style>
+			<script>
+			function validate_fields()
+				{	
+					var i,comentIndex;
+					for(i=0;i<myForm.elements.length;i++)
+					{
+						if(myForm.elements[i] == myForm.comment)
+						{
+							comentIndex = i;
+							break;
+						}
+					}
+				  for(i=0; i<=comentIndex; i++)
+				  {	
+						var inputData = myForm.elements[i].value.trim();	
+						if (inputData == "" || inputData == null)
+						{	
+							var n=myForm.elements[i].id ;
+							alert("Please enter "+n);
+							myForm.elements[i].focus();
+							myForm.elements[i].select();
+							return false;
+							
+						}	
+					
+						
+						if (myForm.elements[i]== myForm.ccnum)				
+						{
+							var text= myForm.ccnum.value;
+							var pattern=/^\d{16}$/;  
+							var res = pattern.test(text);
+							if (!(res))
+							{
+								alert("Credit card number format incorrect");
+								myForm.elements[i].focus();
+								myForm.elements[i].select();
+								return false;												
+							}					
+						}
+						
+						
+						if (myForm.elements[i]== myForm.ccexpire)
+						{
+							var text= myForm.ccexpire.value;
+							var pattern= /^0?[1-9]|1[0-2]\/d{4}$/;  
+							var res = pattern.test(text);
+							
+							if(res)
+							{
+								var ccexpire = myForm.ccexpire.value;
+								var dateparts = ccexpire.split("/");
+								var ccexpDate = new Date();
+								ccexpDate.setMonth(dateparts[0]);
+								ccexpDate.setFullYear(dateparts[1]);
+								if ((ccexpDate - (new Date())) < 0) 
+								{
+									alert("Credit Card Expiration date not valid");
+									myForm.elements[i].focus();
+									myForm.elements[i].select();
+									return false;
+								}
+							}
+							else
+							{
+								alert("Credit card epiration date format incorrect");	
+								myForm.elements[i].focus();
+								myForm.elements[i].select();
+								return false;
+							}
+						}
+						
+						
+						if (myForm.elements[i] == myForm.cctype)
+						{
+							if (myForm.elements[i].selectedIndex == 0)
+							{
+								alert("Select a single value from the dropdown");
+								myForm.elements[i].focus();
+								return false;
+							}
+						}	
+						
+				   }
+				   
+				}
+			</script>
+			</head>
+	
+	<body> 
+		<form  name="myForm"  method="POST" onsubmit=" return validate_fields()">
+		<p align="center"> Please fill your details below </p>
+				<table align="center" style="font-size:15pt" border=2 bgcolor="#F5DEB3" width="50%" height="300px">
+				<tr height="60px"><th align="right">Credit Card Number</th><td><input type="number" name="ccnum" id="Credit card number" size="55" maxlength="16"></td></tr>		
+				<tr><th align="right">Credit Card Type</td>
+					   <td>
+							<select name="cctype" id="credit card type">
+								<option selected > Select Credit Card Type</option>
+								<option>American Express</option>
+								<option>Master Card</option>
+								<option>Visa</option>
+							</select>
+						</td>
+				</tr>		
+				<tr><th align="right">Credit Card Expiration Date (mm/yyyy)</th><td><input  name="ccexpire" id="credit card expiration date" size="7" maxlength="7"></td></tr>		
+				<tr><th align="right">Comments</th><td><textarea name="comment" id="comments" cols="45" rows="4" > </textarea></td></tr>
+				</table>
+		</form>
+<p style="text-align:center">
+	<input type="submit" name="submit" id="submit button" value="Submit">&nbsp &nbsp 
+	<input type="reset" name="reset" id="reset button" value="Reset" >
+</p>
+</body>
+</html>
+
+

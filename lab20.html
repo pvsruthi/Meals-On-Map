@@ -1,0 +1,137 @@
+<html lang="en">
+	<head>
+	<title>Lab 20</title>
+	<meta charset="utf-8">
+	<style>
+		body
+		{
+			background: url("forest.jpg") no-repeat;
+			background-size: cover;
+			font-size : 40pt;
+			color : red;
+			font-weight: bold;
+			font-family:Gabriola;
+		}
+		img
+		{
+			height: 550px;
+			width: 550px;
+		}
+
+	</style>
+	<script type="text/javascript">
+	function populateImageBox(form)
+	{
+		selectbox1 = document.getElementById("select1");
+		selectbox2 = document.getElementById("select2");			
+		document.getElementById("select2").options.length = 0;
+		
+		if (selectbox1.selectedIndex ==0)
+		{
+			var newOptiona = document.createElement("option");
+			newOptiona.appendChild(document.createTextNode("Images"));
+			newOptiona.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOptiona);
+									
+			newOptiona.setAttribute("size","4");
+			
+		}
+		if (selectbox1.selectedIndex ==1)
+		{
+			var newOption0 = document.createElement("option");
+			newOption0.appendChild(document.createTextNode("Images"));
+			newOption0.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption0);
+									
+			var newOption1 = document.createElement("option");
+			newOption1.appendChild(document.createTextNode("Cats"));
+			newOption1.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption1); 
+						
+			var newOption2 = document.createElement("option");
+			newOption2.appendChild(document.createTextNode("Dogs"));
+			newOption2.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption2);
+			
+			var newOption3 = document.createElement("option");
+			newOption3.appendChild(document.createTextNode("Birds"));
+			newOption3.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption3);			
+			
+		}
+		if (selectbox1.selectedIndex ==2)
+		{
+			var newOption = document.createElement("option");
+			newOption.appendChild(document.createTextNode("Images"));
+			newOption.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption);
+					
+			var newOption4 = document.createElement("option");
+			newOption4.appendChild(document.createTextNode("Lion"));
+			newOption4.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption4); 
+			
+			var newOption5 = document.createElement("option");
+			newOption5.appendChild(document.createTextNode("Bear"));
+			newOption5.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption5);
+			
+			var newOption6 = document.createElement("option");
+			newOption6.appendChild(document.createTextNode("Wolf"));
+			newOption6.setAttribute("value", "Option value");
+			selectbox2.appendChild(newOption6);
+		}
+		selectbox2.options[0].disabled = true;
+	}
+	function showImages(form)
+	{
+		selectbox2 = document.getElementById("select2");
+		
+		var img = selectbox2.options[selectbox2.selectedIndex].text; //alert("img :"+img);
+			
+		if (img == "Cats")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Cats.jpg") ;
+		}
+		if (img == "Dogs")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Dogs.jpeg") ;
+		}
+		if (img =="Birds")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Birds.jpg") ;
+		}
+		if (img =="Lion")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Lions.jpg") ;
+		}
+		if (img =="Bear")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Bears.jpg") ;
+		}
+		if (img =="Wolf")
+		{
+			document.getElementById("iframe1").setAttribute('src',"Wolves.jpg") ;
+		}
+	}
+	</script>
+	</head>	
+	<body align= "center">
+	<form id ="myForm">
+	<select name="mySelect1" id="select1" onchange="populateImageBox(this.form)"MULTIPLE SIZE=3>
+        <OPTION selected="true">Animal Categories</option>
+        <option value=2>Pets</option>
+        <option value=3>Wild Animals</option>
+     </select>
+	<select name="mySelect2" id="select2" onchange="showImages(this.form)"MULTIPLE SIZE=4 >
+		<OPTION selected="true" disabled="disabled">Images</option>
+		<option value=5> </option>
+		<option value=6> </option>
+		<option value=7> </option>
+	</select><br><br>
+	<iframe id ="iframe1" width="1500" height="700" seamless="seamless">
+	<p>Your browser does not support iframes.</p>
+	</iframe>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,142 @@
+  <!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>MOM Upcoming Meals </title>
+			<style>
+				a
+				{	
+					font-size : 18pt;
+					color : #3D1365;
+				}
+				body	
+				{
+					background: url("9.jpg") no-repeat;			
+					background-size: cover;
+					font-size : 20pt;
+					color : #3D1365;
+					font-family:Gabriola
+				}
+				.catalogImg
+				{
+					align: center;
+					height: 150px;
+					width : 150px;
+				}
+			</style>
+			<script type="text/javascript">
+				function validate_fields()
+				{	
+					var i,comentIndex;
+					for(i=0;i<myForm.elements.length;i++)
+					{
+						if(myForm.elements[i] == myForm.comment)
+						{
+							comentIndex = i;
+							break;
+						}
+					}
+				  for(i=0; i<=comentIndex; i++)
+				  {	
+						var inputData = myForm.elements[i].value.trim();	
+						if (inputData == "" || inputData == null)
+						{	
+							var n=myForm.elements[i].id ;
+							alert("Please enter "+n);
+							myForm.elements[i].focus();
+							myForm.elements[i].select();
+							return false;
+							
+						}
+						
+						
+						if (myForm.elements[i]== myForm.zip)				
+						{
+							var text= myForm.zip.value;
+							var pattern=new RegExp("^\\d{5}(-\\d{4})?$");  
+							var res = pattern.test(text);
+							if (!(res))
+							{
+								alert("Zip code format incorrect");
+								myForm.elements[i].focus();
+								myForm.elements[i].select();
+								return false;											
+							}				
+						}					
+						
+						
+				   }
+				   
+				}
+				<!-- HIDE FROM OTHER BROWSERS
+				document.write("<H1 align='center'><strong>Meals On Map</strong><img src='food_icon.png' height='50' width='50'><sub><i>Pick-Up Homemade meals from your neighborhood<img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'></i></sub></H1><table align = 'center' border='0.5'  cellspacing = '25'><tr>		<td><a href='Catalog.html'>Today's Menu</a></td><td><a href='Upcoming.html'>Upcoming Meals Available</a></td><td><a href='Deals.html'>Deals</a></td><td><a href='orderform.html'>Order Now</a></td><td><a href='SignUp.html'>Login/Sign-Up</a></td>	<td><a href='FAQs.html'>Frequently Asked Questions</a></td><td><a href='AboutUs.html'> About Us - How we work</a></td></tr></table><hr>");
+				document.write("<p align = 'left'><a href='MOM Homepage.html'>Home</a>>Upcoming Meals</p>");
+				document.write("<form  name='myForm' onsubmit=' return validate_fields()' >");
+				document.write("<table align='center'cellspacing = '20'>");
+				document.write("<tr><td> Search with Zipcode: </td>");
+				document.write("<td> <input type='zip' name='Zip Code' id='zipcode'  size='5' maxlength='5'> </td>");
+				document.write("<td> Search with date: </td>");
+				document.write("<td> <input type='date' name='date'> </td>");
+				document.write("<td> <input type='button' value='Search'></td></tr></table>");
+				document.write("<br> <br>");
+					function product(name,color,price,season,timings,img) 
+					{
+						this.name = name;
+						this.color = color;
+						this.price = price;
+						this.season = season;
+						this.timings = timings;
+						this.img = img;
+						this.show = display;
+					}
+					function display() 
+					{
+						document.write("<td><b>"+this.color+"</td><td><b>"
+											 +this.price+"</td><td><b>"
+											 +this.season+"</td><td><b>"
+											 +this.timings+
+											 "</td><td><img class ='catalogImg' src = "+this.img + "></td>" );
+					}
+					var f1 = new product("Pasta","Penne pasta with classic tomato sause","$8"," All Natural, Organic, 100% Cholesterol Free, Heart Smart, Vegetarian .... <a href='orderform.html'>Order Now</a>","Lunch(12-3pm)","pasta.jpg");
+					var f2 = new product("Pasta","Penne pasta with sun dried tomato cream sause","$10","Handcrafted, Triple-Basted, Slow-Cooked ...<a href='orderform.html'>Order Now</a>","Lunch(12-3pm)<br> Dinner(6-9pm)","pasta2.jpg");
+					
+					var f3 = new product("Potato Croquette","Potato Croquette","$8","Potatoes roasted with flavours... <a href='orderform.html'>Order Now</a>","Lunch(12-3pm)","potato_croquette.jpeg");
+					var f4 = new product("Potato Croquette","Potato Croquette","$10","Boiled potatoes stir fried with soy sauce and vegetables adn meat on the side...<a href='orderform.html'>Order Now</a>","Lunch(12-3pm)<br> Dinner(6-9pm)","potato_croquette.jpeg");
+					
+					var f5 = new product("Vegetables with Olivada","With egg","$7","Handcrafted, Triple-Basted, Slow-Cooked ...<a href='orderform.html'>Order Now</a>","Lunch(12-3pm)","vegetables_with_olivada.jpeg");
+					var f6 = new product("Vegetables with Olivada","No meat/egg","$9","All Natural, Organic, 100% Cholesterol Free, Heart Smart, Vegetarian ...<a href='orderform.html'>Order Now</a>","Lunch(12-3pm)<br> Dinner(6-9pm)","vegetables_with_olivada.jpeg");
+					
+					var Dish1	 = [f1,f2];
+					var Dish2 	 = [f3,f4];
+					var Dish3  = [f5,f6];
+			
+					//2D array consisting of 3 categories of flowers
+					var category = [Dish1,Dish2,Dish3]; 
+					
+					document.writeln("<table border='3' style='width:85%'align = 'center' >");
+					document.write("<th>Category</th><th>Variety</th><th>Price</th><th>Specialty</th><th>Timings Available</th><th>Dish</th>");
+					for(i=0;i<3;i++)
+					{
+						for(j=0;j<2;j++)
+						{
+							document.write("<tr>");
+								if(j==0) document.write("<td rowspan = 2><b>" +category[i][j].name+"</b>");
+							category[i][j].show();							
+							document.write("</tr>");
+						}
+						
+					}
+					document.write("</table>");
+				// STOP HIDING FROM OTHER BROWSERS -->	
+			</script>
+		</head>
+	<body> 
+		<table align = 'center' border='0.5'  cellspacing = '25'>
+		<td><a href="Deals.html">Deals</a></td>
+		<td><a href="orderform.html">Order Now</a></td>
+		<td><a href="SignUp.html">Login/Sign-Up</a></td>
+		<td><a href="FAQs.html">Frequently Asked Questions</a></td>
+		<td><a href="AboutUs.html"> About Us - How we work</a></td>
+		<td><a href="Catalog.html">Meals Available</a></td>
+	</table>
+	</body>
+</html>

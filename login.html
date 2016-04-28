@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Login MOM</title>
+			<style>
+			a
+			{
+				font-size : 18pt;
+				color : #FF4500;
+			}
+			body	
+			{
+				background: url("2.jpg") no-repeat;			
+				background-size: cover;
+				font-size : 20pt;
+				color : #FF4500;
+				font-family:Gabriola
+			}
+			div 
+			{
+				border-style: double;
+				border-width: 5px;
+				width : 300px;
+				padding : 25px;
+				border-radius: 25px;
+				border-color: #FF4500;
+				margin-left : 700px;
+			}
+			</style>	
+			<script>
+			function OpenHomePage()
+			{
+				var homepagefor;
+				if (document.getElementById('cust').checked) 
+				{
+					homepagefor = document.getElementById('cust').value;
+				}
+				if (document.getElementById('prov').checked) 
+				{
+					homepagefor = document.getElementById('prov').value;
+				}
+				if (homepagefor == "Customer") PopUp = window.open('Cust Homepage.html');
+				else if (homepagefor == "Provider") PopUp = window.open('Prov Homepage.html');		
+			}
+			</script>
+		</head>
+	<body align = "left">
+	
+<H1 align="center"><strong>Meals On Map</strong><img src='food_icon.png' height='50' width='50'><sub>Pick-Up Homemade meals from your neighborhood<img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'><img src='chef.jpg' height='15' width='15'></sub></H1>
+		<table align = "center" border='0.5' style='width:60%'>
+		<tr>
+		<td><a href="Catalog.html">Today's Menu</a></td>
+		<td><a href="Upcoming.html">Upcoming Meals Available</a></td>
+		<td><a href="Deals.html">Deals</a></td>
+		<td><a href="orderform.html">Order Now</a></td>
+		<td><a href="SignUp.html">Login/Sign-Up</a></td>
+		<td><a href="FAQs.html">Frequently Asked Questions</a></td>
+		<td><a href="AboutUs.html"> About Us - How we work</a></td>
+		</tr>
+		</table>
+	<hr>
+	<p align = 'left'><a href='MOM Homepage.html'>Home</a>>Login</p>
+	<script>
+		document.write("<div>");
+		document.write("Username: <input type = 'text'><br> ");
+		document.write("Password: <input type = 'password' maxlength='8'>");
+		document.write("<br>Role: <input type='radio' id='cust' name='role' value='Customer'> Customer");
+		document.write("<input type='radio' id='prov' name='role' value='Provider'> Provider ");
+		document.write("<br>&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp");		
+		document.write("<input type = 'button' value='Login' onClick = 'OpenHomePage();'>");
+		document.write("</div>");
+	</script>
+	</body>
+	</html>
+	
