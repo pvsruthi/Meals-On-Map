@@ -1,0 +1,24 @@
+<!-- 
+
+//Write template by referring the code at the bottom of following link:
+
+//https://docs.djangoproject.com/en/1.8/intro/overview/#design-your-templates
+
+-->
+<ol>
+{% for producer in results_list %}
+
+    <li>{{ producer.name }} @ {{producer.address}}</li>
+    
+    <ol>
+    {% for dish in dishes_list %}
+    	{% if dish.producer == producer %}
+    		<li> {{dish.name}} ----- Rating: {{dish.rating}} ----- Available: {{dish.date}}</li>
+    	{% endif %}
+	{% endfor %}	
+	</ol>
+
+{% endfor %}
+</ol>
+
+<a href="/consumer/"> Search Again </a>			<!-- -->

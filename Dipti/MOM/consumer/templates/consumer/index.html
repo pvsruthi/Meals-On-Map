@@ -1,0 +1,20 @@
+<!-- 
+
+A FORM GOES HERE WITH INPUTS
+
+ENTER ZIP:
+ENTER DATE:
+
+A BUTTON >> FIND FOOD. On Submit > Call the link for results with a href.
+
+   -->
+<h2> Welcome to MOM !! Search for Nearby Home-made meals. </h2>
+<h3> Please enter the required Zipcode & Date </h3>
+
+<form action="/consumer/" method="post">	<!--Send form in HTTP POST Request-->
+    {% csrf_token %}
+    {{ form }}
+    
+    <br> <br>
+    <input type="submit" value="Submit" />
+</form>
